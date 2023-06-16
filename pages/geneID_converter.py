@@ -41,7 +41,7 @@ def id_convert(parsed_userinput,IDmap):
     outpd = pd.DataFrame(outlist, columns=['inputID','NewID'])
     return outpd
 
-user_id_input = st.text_area('You can put the IDs from v4 here: e.g. Ptrev51000006m PoHAPv41023350m')
+user_id_input = st.text_area('You can put the IDs from v4 here: e.g. Ptrev51000006m PoHAPv41023350m, both tab or comma separated format, or even a list is supported')
 IDmap = load_map(idmap)
 
 if st.button('Convert'):
