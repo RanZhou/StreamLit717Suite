@@ -6,30 +6,39 @@ This is some _markdown_.
 '''
 
 import streamlit as st
+from PIL import Image
 
 st.set_page_config(
-    page_title="Hello",
-    page_icon="👋",
+    page_title="Poplar App Kits",
+    page_icon="🧬",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://www.aspendb.org/help',
+        'Report a bug': "https://www.aspendb.org/bug",
+        'About': "# This is a header. This is an *extremely* cool app!"
+    }
 )
 
-st.write("# Welcome to TsaiLab's app suite for the 717 genome! 👋")
+image = Image.open('./webmedia/LabLogo.png')
 
-st.sidebar.success("Select a demo above.")
+st.image(image, caption='Sunrise by the mountains')
+
+st.write("# Welcome to the TsaiLab's Poplar App Kits! 🌳")
+
+st.sidebar.success("Select a task you want to do today.")
 
 st.markdown(
     """
-    Streamlit is an open-source app framework built specifically for
-    Machine Learning and Data Science projects.
-    **👈 Select a demo from the sidebar** to see some examples
-    of what Streamlit can do!
-    ### Want to learn more?
-    - Check out [streamlit.io](https://streamlit.io)
-    - Jump into our [documentation](https://docs.streamlit.io)
-    - Ask a question in our [community
-        forums](https://discuss.streamlit.io)
-    ### See more complex demos
-    - Use a neural net to [analyze the Udacity Self-driving Car Image
-        Dataset](https://github.com/streamlit/demo-self-driving)
-    - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
-"""
+    ## Avaiable tools
+    ###### Demultiplexing reads
+    ###### Merging R1 and R2 reads from amplicon sequencing
+    ###### Converting v4 geneIDs to Official geneIDs of the 717 gene models
+    More tools are on the way!
+    If you think these tools are helpful, great!
+    For all questions and suggestions, please contact the admins: \
+    [Ran.Zhou](mailto:ran.zhou@uga.edu), \
+    [Chen Hsieh](mailto:chen.hsieh@uga.edu), \
+    [CJ Tsai](mailto:cjtsai@uga.edu) ! 👋")
+    """
 )
