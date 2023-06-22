@@ -124,6 +124,8 @@ if st.button('Merge'):
     dt_string = sysdatetime.strftime("%Y%m%d_%H_%M_%S")
     ransuffix = str(random.randint(1, 100))
     path="./panda_run/"+dt_string+"_"+ransuffix
+    if not os.path.exists("./panda_run/"):   
+        os.mkdir("./panda_run/")
     os.makedirs(path)
     #outfile1 = path+"/merged/"+"{name1}-{name2}.1.fastq.gz" 
     #outfile2 = path+"/merged/"+"{name1}-{name2}.2.fastq.gz"
