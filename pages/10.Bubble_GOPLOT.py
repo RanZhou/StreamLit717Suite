@@ -41,7 +41,9 @@ outplot = './tempDir/user_GObubble_plot.svg'
 
 canvas_w=st.slider('Canvas width', 8, 16, 1)
 canvas_h=st.slider('Canvas height', 8, 16, 1)
-run_bubble("./tempDir/user_go.bubbleinput.txt",outplot,canvas_w,canvas_h)
+
+if st.button('Plotting'):
+    run_bubble("./tempDir/user_go.bubbleinput.txt",outplot,canvas_w,canvas_h)
 
 
 if os.path.exists(outplot):
