@@ -39,4 +39,4 @@ ggplot(GO_all, aes(x = GO_biological_process, y = COND)) +
   guides(y = guide_legend(order=2),
          colour = guide_colourbar(order=1))
 
-ggsave(file=args[2], plot=myplot, width=8, height=8)
+ggsave(file=args[2], plot=myplot, width=args[3], height=args[4])
