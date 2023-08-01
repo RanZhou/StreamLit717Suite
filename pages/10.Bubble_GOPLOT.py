@@ -30,8 +30,8 @@ if st.button('Save my input'):
     st.write('Dataframe has been written into a file successfully')
 
 
-def run_bubble(user_input, outputname):
-    R_cmd = f'Rscript ./scripts/GObubble.R {user_input} {outputname} >Go.log'
+def run_bubble(user_input, outputname, w, h):
+    R_cmd = f'Rscript ./scripts/GObubble.R {user_input} {outputname} {w} {h} >Go.log'
     st.write("Running GO plotter as:")
     st.write(str(R_cmd))
     subprocess.call(R_cmd, shell=True)
@@ -39,9 +39,10 @@ def run_bubble(user_input, outputname):
 
 outplot = './tempDir/user_GObubble_plot.svg'
 
-canvas_size=st.slider('Canvas size', 600, 1200, 100)
-run_bubble("./tempDir/user_go.bubbleinput.txt",outplot)
-st.image(outplot, caption='Your dotplot', width=canvas_size)
+canvas_w=st.slider('Canvas width', 8, 16, 1)
+canvas_h=st.slider('Canvas height', 8, 16, 1)
+run_bubble("./tempDir/user_go.bubbleinput.txt",outplot,canvas_w,canvas_h)
+st.image(outplot, caption='Your dotplot', width=800)
 
 if os.path.exists(outplot):
     with open(outplot, "rb") as file:
