@@ -42,9 +42,10 @@ outplot = './tempDir/user_GObubble_plot.svg'
 canvas_w=st.slider('Canvas width', 8, 16, 1)
 canvas_h=st.slider('Canvas height', 8, 16, 1)
 run_bubble("./tempDir/user_go.bubbleinput.txt",outplot,canvas_w,canvas_h)
-st.image(outplot, caption='Your dotplot', width=800)
+
 
 if os.path.exists(outplot):
+    st.image(outplot, caption='Your dotplot', width=800)
     with open(outplot, "rb") as file:
         btn = st.download_button(
                 label="Download your plot",
