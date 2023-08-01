@@ -3,7 +3,7 @@
 args = commandArgs(trailingOnly=TRUE)
 
 library(ggplot2)
-install.packages('svglite')
+#install.packages('svglite')
 library(svglite)
 
 GO_all <- read.table(args[1],header=T,sep="\t",stringsAsFactors = T)
@@ -38,5 +38,6 @@ ggplot(GO_all, aes(x = GO_biological_process, y = COND)) +
   labs(color="-log10(pvalue)", size="Fold enrichment") #Replace by your variable names; \n allow a new line for text
   guides(y = guide_legend(order=2),
          colour = guide_colourbar(order=1))
-
-ggsave(file=args[2], plot=myplot, width=args[3], height=args[4])
+uw=as.numeric(args[3])
+uh=as.numeric(args[4])
+ggsave(file=args[2], plot=myplot, width=uw, height=uh)
