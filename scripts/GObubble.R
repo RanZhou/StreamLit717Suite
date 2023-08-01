@@ -3,7 +3,7 @@
 args = commandArgs(trailingOnly=TRUE)
 
 library(ggplot2)
-#install.packages('svglite')
+install.packages('svglite')
 library(svglite)
 
 GO_all <- read.table(args[1],header=T,sep="\t",stringsAsFactors = T)
